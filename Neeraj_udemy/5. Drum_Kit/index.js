@@ -1,5 +1,5 @@
 
-// Part 1of2: Detecting Button Press:
+
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i < numberOfDrumButtons; i++) {
@@ -7,28 +7,30 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         // console.log(this.innerHTML);
 
-        var buttonInnerHTML = this.innerHTML; // if a button was pressed, then I check the inner HTML of that button
+        var buttonInnerHTML = this.innerHTML; 
+        // if a button was pressed, then I check the inner HTML of that button
 
-        makeSound(buttonInnerHTML); // and send it to makeSound in order to play the relevant sound
+        makeSound(buttonInnerHTML);
+        // makeSound in order to play the relevant sound
 
         buttonAnimation(buttonInnerHTML);
     });
 }
 
-// Part 2of2: Detecting Keyboard Press
-document.addEventListener("keydown", function (event) { // if a key is pressed ins tead of a button,
 
-    makeSound(event.key); // I send the event.key, the key property of the event, which is the physical key pressed on the keyboard
+document.addEventListener("keydown", function (event) { // if a key is pressed instead of a button,
 
+    makeSound(event.key); 
+    
     buttonAnimation(event.key);
 });
 
-function makeSound(key) { // parts 1 and 2 end up here, where we switch based on that key parameter.
+function makeSound(key) {
 
-    switch (key) { // now depending on each case we will tell it to do something different
+    switch (key) { 
         case "a":
-            var tom1 = new Audio("sounds/tom-1.mp3"); // create a variable that stores this new object by writing "new Audio" and the URL or location of that audio. This will construct an audio HTML element with several properties and methods.
-            tom1.play(); // play is one of those methods
+            var tom1 = new Audio("sounds/tom-1.mp3"); 
+            tom1.play(); 
             break;
 
         case "s":
