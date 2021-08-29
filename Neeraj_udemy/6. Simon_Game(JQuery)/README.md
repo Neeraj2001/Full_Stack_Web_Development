@@ -1,4 +1,4 @@
-Simon Game made using jQuery
+Simon Game
 
 Instructions:  
 1. Press any Key to start the Game
